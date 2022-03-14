@@ -25,17 +25,17 @@ export const Header: React.FC = () =>{
 
   return (
     <AppBar sx={{
-      height: '15vh',
+      height: '10vh',
       boxShadow: '0px 10px 13px -7px #00091a',
-    }} color='dark' position="static">
+    }} color='dark'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'flex'}}}>
 
-            <img style={{height: '80px', marginTop: '10px'}}
+            <img style={{height: '50px'}}
               src={process.env.PUBLIC_URL + '/logo192.png'} />
             <Typography textAlign='center' fontFamily="Chakra Petch"
-              sx={{marginTop: '55px', marginLeft: '10px', display: {xs: 'none', md: 'flex'}}}>
+              sx={{marginTop: '4vh', marginLeft: '10px', display: {xs: 'none', md: 'flex'}}}>
               GRUPO CONNECT
             </Typography>
 
@@ -52,7 +52,7 @@ export const Header: React.FC = () =>{
               onClick={()=> {
                 console.log('b2');
               }}
-              sx={{marginTop: '30px', color: 'white', display: 'block'}}
+              sx={{color: 'white', display: 'block'}}
             >
                 SOBRE NÓS
             </Button>
@@ -60,7 +60,7 @@ export const Header: React.FC = () =>{
               onClick={()=> {
                 console.log('b2');
               }}
-              sx={{marginTop: '30px', color: 'white', display: 'block'}}
+              sx={{color: 'white', display: 'block'}}
             >
                 PRODUTOS
             </Button>
@@ -68,7 +68,7 @@ export const Header: React.FC = () =>{
               onClick={()=> {
                 console.log('b3');
               }}
-              sx={{marginTop: '30px', color: 'white', display: 'block'}}
+              sx={{color: 'white', display: 'block'}}
             >
                 CONTATO
             </Button>
@@ -76,7 +76,7 @@ export const Header: React.FC = () =>{
               onClick={()=> {
                 console.log('b4');
               }}
-              sx={{marginTop: '30px', color: 'white', display: 'block'}}
+              sx={{color: 'white', display: 'block'}}
             >
                   Sistema Connect
             </Button>

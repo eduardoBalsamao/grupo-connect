@@ -7,7 +7,7 @@ interface IBaseLayoutProps {
 
 export const HomeLayout: React.FC<IBaseLayoutProps> = ({children, title, subtitle}) => {
   return (
-    <Box height="85vh" flex="1" display="flex" flexDirection="column"
+    <Box height="100vh" flex="1" display="flex" flexDirection="column"
       gap={2} alignItems="center"
       sx={{
         backgroundImage: {
@@ -18,7 +18,7 @@ export const HomeLayout: React.FC<IBaseLayoutProps> = ({children, title, subtitl
         backgroundRepeat: 'no-repeat',
 
       }}>
-      <Box marginTop="75px" fontFamily="Chakra Petch"
+      <Box marginTop="175px" fontFamily="Chakra Petch"
         sx={{
           fontSize: {xs: '50px', md: '65px'},
           color: 'white',
