@@ -23,7 +23,7 @@ export const LightTheme = createTheme({
 
   palette: {
     dark: {
-      main: '#000000',
+      main: '#020202',
       contrastText: '#fff',
     },
 
@@ -41,6 +41,14 @@ export const LightTheme = createTheme({
     },
 
   },
+
+  typography: {
+    fontFamily: [
+      'Montserrat',
+      'Chakra Petch',
+    ].join(','),
+  },
+
 });
 
 

@@ -25,7 +25,8 @@ export const Header: React.FC = () =>{
 
   return (
     <AppBar sx={{
-      height: '100px',
+      height: '15vh',
+      boxShadow: '0px 10px 13px -7px #00091a',
     }} color='dark' position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -33,18 +34,20 @@ export const Header: React.FC = () =>{
 
             <img style={{height: '80px', marginTop: '10px'}}
               src={process.env.PUBLIC_URL + '/logo192.png'} />
+            <Typography textAlign='center' fontFamily="Chakra Petch"
+              sx={{marginTop: '55px', marginLeft: '10px', display: {xs: 'none', md: 'flex'}}}>
+              GRUPO CONNECT
+            </Typography>
 
+          </Box>
+          <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}, textAlign: 'center'}}>
+            <Typography textAlign='center' fontFamily="Chakra Petch">
+              GRUPO CONNECT
+            </Typography>
           </Box>
 
           <Box sx={{marginTop: '20px', flexGrow: 0, display: {xs: 'none', md: 'flex'}}}>
-            <Button
-              onClick={()=> {
-                console.log('b1');
-              }}
-              sx={{marginTop: '30px', color: 'white', display: 'block'}}
-            >
-                HOME
-            </Button>
+
             <Button
               onClick={()=> {
                 console.log('b2');

@@ -1,13 +1,14 @@
 
 import {Navigate, Route, Routes} from 'react-router-dom';
-import {Header} from '../shared/components';
+import {Home} from '../pages';
 
 
 export const AppRoutes = () =>{
   return (
     <Routes>
       <Route path="/" element={
-        <Header />}
+        <Home />
+      }
       />
 
       <Route path="*" element={<Navigate to="/" />} />
