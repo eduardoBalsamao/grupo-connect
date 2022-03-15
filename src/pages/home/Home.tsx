@@ -2,6 +2,23 @@ import {HomeLayout} from '../../shared/layouts';
 import {BaseLayout} from '../../shared/layouts';
 import {Box, Card, CardContent, Grid, Typography, Button} from '@mui/material';
 
+const cardContent = [
+  {
+    id: 1,
+    title: 'Conectar',
+    text: 'Conectamos os seus dispositivos a internet usando placas de aquisição de dados e disponibilizamos em plataformas web.',
+  },
+  {
+    id: 2,
+    title: 'Gerenciar',
+    text: 'Disponibilizamos seu próprio console para acompanhar os dados gerados e a partir da análise tomar as melhores decisões para resolver seus problemas.',
+  },
+  {
+    id: 3,
+    title: 'Prever',
+    text: 'Obtenha acesso a informações sobre possíveis problemas para planejar ações preventivas dentro da plataforma.',
+  },
+];
 
 export const Home = () =>{
   return (
@@ -15,49 +32,27 @@ export const Home = () =>{
       </HomeLayout>
 
       <BaseLayout title='Como o IOT pode ajudar seu negócio e sua vida'>
-        <Box marginTop="1vh">
+        <Box>
           <Grid padding="20px" container justifyContent="space-around" alignItems="center" textAlign="center">
-            <Grid item md={3}>
-              <Box>
-                <Card>
-                  <CardContent>
-                    <img style={{width: '100px'}} src={process.env.PUBLIC_URL + '/logo192.png'}></img>
-                    <Typography sx={{fontSize: 20}} gutterBottom>
-                    Conectar
-                    </Typography>
-                    <Typography sx={{fontSize: 14}} gutterBottom>
-                  Conectamos os seus dispositivos a internet  com placas de aquisição de dados,e disponivilizamos em plataformas web para  ações de conectividade IOT.
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Box>
-            </Grid>
-            <Grid item md={3}>
-              <Card>
-                <CardContent>
-                  <img style={{width: '100px'}} src={process.env.PUBLIC_URL + '/logo192.png'}></img>
-                  <Typography sx={{fontSize: 20}} gutterBottom>
-                    Conectar
-                  </Typography>
-                  <Typography sx={{fontSize: 14}} gutterBottom>
-                  Conectamos os seus dispositivos a internet  com placas de aquisição de dados,e disponivilizamos em plataformas web para  ações de conectividade IOT.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item md={3}>
-              <Card >
-                <CardContent>
-                  <img style={{width: '100px'}} src={process.env.PUBLIC_URL + '/logo192.png'}></img>
-                  <Typography sx={{fontSize: 20}} gutterBottom>
-                    Conectar
-                  </Typography>
-                  <Typography sx={{fontSize: 14}} gutterBottom>
-                  Conectamos os seus dispositivos a internet  com placas de aquisição de dados,e disponivilizamos em plataformas web para  ações de conectividade IOT.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
+            {cardContent.map(({id, title, text}) => (
+              <Grid key={id} item md={3}>
+                <Box>
+                  <Card variant="outlined" sx={{height: '325px'}}>
+                    <CardContent>
+                      <img style={{width: '100px', margin: '20px'}} src={process.env.PUBLIC_URL + '/logo192.png'}></img>
+                      <Typography sx={{fontSize: 20}} gutterBottom>
+                        {title}
+                      </Typography>
+                      <Typography sx={{fontSize: 14, paddingLeft: '10px', paddingRight: '10px'}} gutterBottom>
+                        {text}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Box>
+
+              </Grid>
+            ))}
+
 
           </Grid>
         </Box>

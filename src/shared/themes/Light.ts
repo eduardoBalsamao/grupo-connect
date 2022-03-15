@@ -29,20 +29,56 @@ export const LightTheme = createTheme({
 
     primary: {
       main: '#1b5682',
-      dark: '#154365',
-      light: '#1e6091',
-      contrastText: '#e8eff4',
+      dark: '#002e55',
+      light: '#5282b2',
+      contrastText: '#ffffff',
     },
     secondary: {
       main: '#3d143d',
       dark: '#2e0f2e',
       light: '#4d194d',
-      contrastText: '#ede8ed',
+      contrastText: '#ffffff',
     },
 
   },
 
   typography: {
+    h1: {
+      fontFamily: 'Chakra Petch',
+    },
+    h2: {
+      fontFamily: 'Chakra Petch',
+    },
+    h3: {
+      fontFamily: 'Chakra Petch',
+    },
+    h4: {
+      fontFamily: 'Chakra Petch',
+    },
+    h5: {
+      fontFamily: 'Chakra Petch',
+    },
+    h6: {
+      fontFamily: 'Chakra Petch',
+    },
+    subtitle1: {
+      fontFamily: 'Montserrat',
+      fontWeight: '700',
+    },
+    subtitle2: {
+      fontFamily: 'Montserrat',
+      fontWeight: '700',
+    },
+    body1: {
+      fontFamily: 'Montserrat',
+    },
+    body2: {
+      fontFamily: 'Montserrat',
+    },
+    button: {
+      fontFamily: 'Chakra Petch',
+    },
+
     fontFamily: [
       'Montserrat',
       'Chakra Petch',
