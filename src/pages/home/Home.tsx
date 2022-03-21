@@ -26,24 +26,24 @@ export const Home = () =>{
       <HomeLayout title='Grupo Connect'
         subtitle='Conectamos o mundo atraves de soluções e produtos IOT'
       >
-        <Box width="400px" marginBottom="100px" marginTop="30px">
-          <Button sx={{height: '50px', fontSize: '16px', borderRadius: '50px'}} fullWidth variant='contained'>Confira nossos Produtos</Button>
+        <Box sx={{width: {md: '350px'}}} marginBottom="100px" marginTop="30px">
+          <Button fullWidth sx={{height: '50px', fontSize: '14px', borderRadius: '50px'}} variant='contained'>Confira nossos Produtos</Button>
         </Box>
       </HomeLayout>
 
-      <BaseLayout title='Como o IOT pode ajudar seu negócio e sua vida'>
+      <BaseLayout title='Como o IOT pode transformar a sua vida'>
         <Box>
           <Grid padding="20px" container justifyContent="space-around" alignItems="center" textAlign="center">
             {cardContent.map(({id, title, text}) => (
               <Grid key={id} item md={3}>
-                <Box>
-                  <Card variant="outlined" sx={{height: '325px'}}>
+                <Box sx={{marginBottom: '3vh'}}>
+                  <Card sx={{height: {md: '48vh'}}}>
                     <CardContent>
-                      <img style={{width: '100px', margin: '20px'}} src={process.env.PUBLIC_URL + '/logo192.png'}></img>
-                      <Typography sx={{fontSize: 20}} gutterBottom>
+                      <img style={{width: '90px'}} src={process.env.PUBLIC_URL + '/logo192.png'}></img>
+                      <Typography fontWeight='700' variant='h6' gutterBottom>
                         {title}
                       </Typography>
-                      <Typography sx={{fontSize: 14, paddingLeft: '10px', paddingRight: '10px'}} gutterBottom>
+                      <Typography textAlign='center' variant='subtitle2' gutterBottom>
                         {text}
                       </Typography>
                     </CardContent>

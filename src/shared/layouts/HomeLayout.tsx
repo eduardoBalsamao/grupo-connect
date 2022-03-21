@@ -1,4 +1,4 @@
-import {Box} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 
 interface IBaseLayoutProps {
     title: string;
@@ -7,8 +7,8 @@ interface IBaseLayoutProps {
 
 export const HomeLayout: React.FC<IBaseLayoutProps> = ({children, title, subtitle}) => {
   return (
-    <Box height="100vh" flex="1" display="flex" flexDirection="column"
-      gap={2} alignItems="center"
+    <Box height="100vh" display="flex" flexDirection="column"
+      gap={2} alignItems="center" justifyContent="center"
       sx={{
         backgroundImage: {
           xs: `linear-gradient(to left, rgba(1, 10, 27, 0.85), rgba(0, 21, 35, 0.3)), url(${process.env.PUBLIC_URL + '/wp5.jpg'})`,
@@ -18,19 +18,16 @@ export const HomeLayout: React.FC<IBaseLayoutProps> = ({children, title, subtitl
         backgroundRepeat: 'no-repeat',
 
       }}>
-      <Box marginTop="175px" fontFamily="Chakra Petch"
-        sx={{
-          fontSize: {xs: '50px', md: '65px'},
-          color: 'white',
-        }}>
-        {title}
+      <Box fontFamily="Chakra Petch">
+        <Typography textAlign='center' variant='h2' color='white'>
+          {title}
+        </Typography>
       </Box>
-      <Box fontFamily="Montserrat"
-        sx={{
-          fontSize: {xs: '15px', md: '25px'},
-          color: 'white',
-        }}>
-        {subtitle}
+      <Box textAlign='center' fontFamily="Montserrat">
+        <Typography variant='h5' color='white'>
+          {subtitle}
+        </Typography>
+
       </Box>
       {children}
 

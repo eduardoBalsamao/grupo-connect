@@ -1,4 +1,4 @@
-import {createTheme} from '@mui/material';
+import {createTheme, responsiveFontSizes} from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
   interface Palette {
@@ -19,11 +19,11 @@ declare module '@mui/material/AppBar' {
   }
 }
 
-export const LightTheme = createTheme({
+export const LightTheme = responsiveFontSizes(createTheme({
 
   palette: {
     dark: {
-      main: '#020202',
+      main: '#0C0C1D',
       contrastText: '#fff',
     },
 
@@ -56,10 +56,10 @@ export const LightTheme = createTheme({
       fontFamily: 'Chakra Petch',
     },
     h5: {
-      fontFamily: 'Chakra Petch',
+      fontFamily: 'Montserrat',
     },
     h6: {
-      fontFamily: 'Chakra Petch',
+      fontFamily: 'Montserrat',
     },
     subtitle1: {
       fontFamily: 'Montserrat',
@@ -67,7 +67,7 @@ export const LightTheme = createTheme({
     },
     subtitle2: {
       fontFamily: 'Montserrat',
-      fontWeight: '700',
+      fontWeight: '400',
     },
     body1: {
       fontFamily: 'Montserrat',
@@ -85,6 +85,6 @@ export const LightTheme = createTheme({
     ].join(','),
   },
 
-});
+}));
 
 
