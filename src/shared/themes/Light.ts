@@ -19,6 +19,7 @@ declare module '@mui/material/AppBar' {
   }
 }
 
+
 export const LightTheme = responsiveFontSizes(createTheme({
 
   palette: {

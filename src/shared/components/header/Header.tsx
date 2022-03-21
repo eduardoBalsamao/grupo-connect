@@ -26,7 +26,7 @@ export const Header: React.FC = () =>{
   return (
     <AppBar sx={{
       height: '10vh',
-      boxShadow: '0px 10px 13px -7px #00091a',
+      boxShadow: '0px 10px 13px -7px #0C0C1D',
     }} color='dark'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -35,7 +35,7 @@ export const Header: React.FC = () =>{
             <img style={{height: '50px'}}
               src={process.env.PUBLIC_URL + '/logo192.png'} />
             <Typography textAlign='center' fontFamily="Chakra Petch"
-              sx={{marginTop: '4vh', marginLeft: '10px', display: {xs: 'none', md: 'flex'}}}>
+              sx={{marginTop: '4vh', marginLeft: '1vh', display: {xs: 'none', md: 'flex'}}}>
               GRUPO CONNECT
             </Typography>
 
