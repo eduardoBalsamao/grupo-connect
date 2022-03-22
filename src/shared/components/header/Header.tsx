@@ -9,9 +9,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import {useNavigate} from 'react-router-dom';
 
 
 export const Header: React.FC = () =>{
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React
       .useState<null | HTMLElement>(null);
 
@@ -31,11 +33,15 @@ export const Header: React.FC = () =>{
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'flex'}}}>
+            <IconButton color="primary" component="span" onClick={()=>{
+              navigate('/');
+            }}>
+              <img style={{height: '50px'}}
+                src={process.env.PUBLIC_URL + '/logo192.png'} />
 
-            <img style={{height: '50px'}}
-              src={process.env.PUBLIC_URL + '/logo192.png'} />
+            </IconButton>
             <Typography textAlign='center' fontFamily="Chakra Petch"
-              sx={{marginTop: '4vh', marginLeft: '1vh', display: {xs: 'none', md: 'flex'}}}>
+              sx={{marginTop: '5vh', display: {xs: 'none', md: 'flex'}}}>
               GRUPO CONNECT
             </Typography>
 
@@ -50,7 +56,7 @@ export const Header: React.FC = () =>{
 
             <Button
               onClick={()=> {
-                console.log('b2');
+                navigate('/sobre');
               }}
               sx={{color: 'white', display: 'block'}}
             >
@@ -118,7 +124,7 @@ export const Header: React.FC = () =>{
                 <Typography textAlign="center">Home</Typography>
               </MenuItem>
               <MenuItem onClick={()=> {
-                console.log('b1');
+                navigate('/sobre');
               }}>
                 <Typography textAlign="center">Sobre Nós</Typography>
               </MenuItem>

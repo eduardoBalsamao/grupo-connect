@@ -72,6 +72,7 @@ export const LightTheme = responsiveFontSizes(createTheme({
     },
     body1: {
       fontFamily: 'Montserrat',
+      fontWeight: '600',
     },
     body2: {
       fontFamily: 'Montserrat',

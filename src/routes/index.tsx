@@ -10,7 +10,7 @@ export const AppRoutes = () =>{
         <Home />
       }
       />
-      <Route path="/style" element={
+      <Route path="/sobre" element={
         <Info />
       }
       />

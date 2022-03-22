@@ -32,7 +32,7 @@ export const Home = () =>{
       </HomeLayout>
 
       <BaseLayout title='Como o IOT pode transformar a sua vida'>
-        <Box>
+        <Box sx={{marginTop: '5vh'}}>
           <Grid padding="20px" container justifyContent="space-around" alignItems="center" textAlign="center">
             {cardContent.map(({id, title, text}) => (
               <Grid key={id} item md={3}>

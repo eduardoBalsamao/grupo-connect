@@ -24,10 +24,10 @@ export const Footer: React.FC = () =>{
         </Grid>
         <Grid container item xs={3} justifyContent="flex-end">
           <Stack direction="row" spacing={0}>
-            <IconButton sx={{borderRadius: '50px'}} color="primary" aria-label="upload picture" component="span">
+            <IconButton sx={{borderRadius: '50px'}} color="primary" component="span">
               <Avatar sx={{width: 30, height: 30}} src={process.env.PUBLIC_URL + '/ifacebook.svg'} />
             </IconButton>
-            <IconButton color="primary" aria-label="upload picture" component="span">
+            <IconButton color="primary" component="span">
               <Avatar sx={{width: 30, height: 30}} src={process.env.PUBLIC_URL + '/iinstagram.svg'} />
             </IconButton>
             <IconButton color="primary" aria-label="upload picture" component="span">
