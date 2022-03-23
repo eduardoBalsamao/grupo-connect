@@ -1,4 +1,4 @@
-# Opracoes Firebase RealtimeDatabase
+# Grupo Connect
 O Grupo Connect é uma startup em desenvolvimento focada em produtos IOT. Esse site (em produção) contem informações sobre nós.
 
 ## Imagens:
