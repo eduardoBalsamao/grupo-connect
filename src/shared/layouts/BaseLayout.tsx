@@ -10,7 +10,7 @@ export const BaseLayout: React.FC<IBaseLayoutProps> = ({children, title, image})
     <Box flex="1" display="flex" flexDirection="column"
       gap={1} sx={{backgroundColor: '#F2F4FA', height: {sx: '95vh', md: '100vh'}}}
     >
-      <Box sx={{marginTop: {xs: '5vh', md: '11vh'}}} fontFamily="Chakra Petch">
+      <Box sx={{marginTop: {xs: '5vh', md: '12vh'}}} fontFamily="Chakra Petch">
         <Typography marginX='1.5vh' variant='h3' textAlign='center' color="#1B5682">
           {title}
         </Typography>
