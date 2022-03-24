@@ -20,6 +20,24 @@ const cardContent = [
   },
 ];
 
+const cardContent2 = [
+  {
+    id: 1,
+    title: 'Iot Domestico',
+    text: 'Você sabe como o uso domestico do IOT pode facilitar sua vida? Possibilitamos automação de jardinagem, piscinas, portões eletronicos e luzes. Leia nosso artigo e saiba mais.',
+  },
+  {
+    id: 2,
+    title: 'Exemplo',
+    text: 'Exemplo Exemplo Exemplo Exemplo ExemploExemplo Exemplo, Exemplo, ExemploExemplo Exemplo Exemplo Exemplo, Exemplo Exemplo.',
+  },
+  {
+    id: 3,
+    title: 'Exemplo',
+    text: 'Exemplo Exemplo Exemplo Exemplo ExemploExemplo Exemplo, Exemplo, ExemploExemplo Exemplo Exemplo Exemplo, Exemplo Exemplo.',
+  },
+];
+
 export const Home = () =>{
   return (
     <Box>
@@ -64,26 +82,34 @@ export const Home = () =>{
 
       <BaseLayout title='Leia nossos artigos'>
         <Box sx={{marginTop: '5vh', paddingX: '5vh'}}>
-          <Card sx={{maxWidth: 345}}>
-            <CardMedia
-              component="img"
-              height="140"
-              src={process.env.PUBLIC_URL + '/img1.jpg'}
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-          Iot Domestico
-              </Typography>
-              <Typography variant="body2" textAlign='initial'>
-          Você sabe como o uso domestico do IOT pode facilitar sua vida? Possibilitamos automação
-          de jardinagem, piscinas, portões eletronicos e luzes. Leia nosso artigo e saiba mais.
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button size="small">Leia Mais</Button>
-            </CardActions>
-          </Card>
+          <Grid padding="20px" container justifyContent="space-around">
+            {cardContent2.map(({id, title, text}) => (
+              <Grid key={id} item md={3}>
+                <Box sx={{marginBottom: '2vh'}}>
+                  <Card sx={{maxWidth: 345}}>
+                    <CardMedia
+                      component="img"
+                      height="140"
+                      src={process.env.PUBLIC_URL + '/img1.jpg'}
+                      alt="green iguana"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div" color="primary">
+                        {title}
+                      </Typography>
+                      <Typography variant="body2" textAlign='initial'>
+                        {text}
+                      </Typography>
+                    </CardContent>
+                    <CardActions sx={{justifyContent: 'end', marginRight: '2vh'}}>
+                      <Button size="small">Leia Mais</Button>
+                    </CardActions>
+                  </Card>
+                </Box>
+
+              </Grid>
+            ))}
+          </Grid>
         </Box>
 
       </BaseLayout>
