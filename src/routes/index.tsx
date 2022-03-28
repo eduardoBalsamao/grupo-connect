@@ -1,6 +1,6 @@
 
 import {Navigate, Route, Routes} from 'react-router-dom';
-import {Home, Info} from '../pages';
+import {Home, Info, Artigos} from '../pages';
 
 
 export const AppRoutes = () =>{
@@ -12,6 +12,10 @@ export const AppRoutes = () =>{
       />
       <Route path="/sobre" element={
         <Info />
+      }
+      />
+      <Route path="/artigos" element={
+        <Artigos />
       }
       />
 
