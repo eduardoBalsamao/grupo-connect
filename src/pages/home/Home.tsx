@@ -1,6 +1,10 @@
 import {HomeLayout} from '../../shared/layouts';
 import {BaseLayout} from '../../shared/layouts';
 import {Box, Card, CardContent, Grid, Typography, Button, CardMedia, CardActions} from '@mui/material';
+import app from '../../shared/firebase/firebase';
+import {getDatabase, ref, onValue} from 'firebase/database';
+import * as React from 'react';
+import {useNavigate} from 'react-router-dom';
 
 const cardContent = [
   {
@@ -20,25 +24,37 @@ const cardContent = [
   },
 ];
 
-const cardContent2 = [
-  {
-    id: 1,
-    title: 'Iot Domestico',
-    text: 'Você sabe como o uso domestico do IOT pode facilitar sua vida? Possibilitamos automação de jardinagem, piscinas, portões eletronicos e luzes. Leia nosso artigo e saiba mais.',
-  },
-  {
-    id: 2,
-    title: 'Exemplo',
-    text: 'Exemplo Exemplo Exemplo Exemplo ExemploExemplo Exemplo, Exemplo, ExemploExemplo Exemplo Exemplo Exemplo, Exemplo Exemplo.',
-  },
-  {
-    id: 3,
-    title: 'Exemplo',
-    text: 'Exemplo Exemplo Exemplo Exemplo ExemploExemplo Exemplo, Exemplo, ExemploExemplo Exemplo Exemplo Exemplo, Exemplo Exemplo.',
-  },
-];
-
 export const Home = () =>{
+  const [data, setData] = React.useState<any>([]);
+  const database = getDatabase(app);
+  const reference = ref(database, `/Artigos/`);
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    const getArtigos = async () =>{
+      await onValue(reference, (snapshot) =>{
+        const d: any[] = []; // Data temporaria
+
+        snapshot.forEach((item) => {
+          const artigosData: {
+            id?: any,
+            title: string,
+            description: string,
+            image: string
+          } = {
+            id: item.key,
+            title: item.val().titulo,
+            description: item.val().descricao,
+            image: item.val().imagem,
+          };
+          d.push(artigosData);
+        });
+        setData(d);
+      });
+    };
+
+    getArtigos();
+  }, []);
   return (
     <Box>
       <HomeLayout title='Grupo Connect'
@@ -81,28 +97,30 @@ export const Home = () =>{
       </Box>
 
       <BaseLayout title='Leia nossos artigos'>
-        <Box sx={{marginTop: '5vh', paddingX: '5vh'}}>
+        <Box sx={{marginTop: '3vh', paddingX: '5vh'}}>
           <Grid padding="20px" container justifyContent="space-around">
-            {cardContent2.map(({id, title, text}) => (
-              <Grid key={id} item md={3}>
+            {data.map((item: any) => (
+              <Grid key={item} item md={3}>
                 <Box sx={{marginBottom: '2vh'}}>
                   <Card sx={{maxWidth: 345}}>
                     <CardMedia
                       component="img"
                       height="140"
-                      src={process.env.PUBLIC_URL + '/img1.jpg'}
+                      src={item.image}
                       alt="green iguana"
                     />
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div" color="primary">
-                        {title}
+                        {item.title}
                       </Typography>
                       <Typography variant="body2" textAlign='initial'>
-                        {text}
+                        {item.description}
                       </Typography>
                     </CardContent>
                     <CardActions sx={{justifyContent: 'end', marginRight: '2vh'}}>
-                      <Button size="small">Leia Mais</Button>
+                      <Button onClick={()=>{
+                        navigate(`/artigos/${item.id}`);
+                      }} size="small">Leia Mais</Button>
                     </CardActions>
                   </Card>
                 </Box>

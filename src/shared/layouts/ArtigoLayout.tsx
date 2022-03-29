@@ -2,10 +2,10 @@ import {Box, Typography, Grid} from '@mui/material';
 import Divider from '@mui/material/Divider';
 
 interface IArtigoLayoutProps {
-    title: string;
-    date: string;
-    image?: string;
-    text: string
+    title: string | undefined;
+    date: string | undefined;
+    image?: string | undefined;
+    text: string | undefined;
 }
 
 export const ArtigoLayout: React.FC<IArtigoLayoutProps> = ({children, title, image, date, text}) => {
@@ -13,7 +13,7 @@ export const ArtigoLayout: React.FC<IArtigoLayoutProps> = ({children, title, ima
     <Box flex="1" display="flex" flexDirection="column"
       gap={1} sx={{backgroundColor: '#F2F4FA', minHeight: '100vh'}}
     >
-      <Box sx={{marginTop: {xs: '7vh', md: '15vh'}, padding: '5vh'}}>
+      <Box sx={{marginTop: {xs: '7vh', md: '10vh'}, padding: '5vh'}}>
         <Typography variant='h4' fontFamily="Chakra Petch" color="#1B5682">
           {title}
         </Typography>
@@ -28,7 +28,7 @@ export const ArtigoLayout: React.FC<IArtigoLayoutProps> = ({children, title, ima
 
           <Grid item marginTop='2vh'>
             <Box sx={{maxWidth: {sx: '40vh', md: '75vh'}}}>
-              <img style={{maxWidth: '100%'}} src={process.env.PUBLIC_URL + '/img1.jpg'}></img>
+              <img style={{maxWidth: '100%'}} src={image} />
             </Box>
           </Grid>
           <Grid item>

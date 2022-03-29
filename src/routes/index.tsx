@@ -14,7 +14,7 @@ export const AppRoutes = () =>{
         <Info />
       }
       />
-      <Route path="/artigos" element={
+      <Route path="/artigos/:artigoId" element={
         <Artigos />
       }
       />
