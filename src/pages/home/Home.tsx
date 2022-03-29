@@ -11,16 +11,19 @@ const cardContent = [
     id: 1,
     title: 'Conectar',
     text: 'Conectamos os seus dispositivos a internet usando placas de aquisição de dados e disponibilizamos em plataformas web.',
+    img: process.env.PUBLIC_URL + '/iot.svg',
   },
   {
     id: 2,
     title: 'Gerenciar',
     text: 'Disponibilizamos seu próprio console para acompanhar os dados gerados e a partir da análise tomar as melhores decisões para resolver seus problemas.',
+    img: process.env.PUBLIC_URL + '/project-management-timeline.svg',
   },
   {
     id: 3,
     title: 'Prever',
     text: 'Obtenha acesso a informações sobre possíveis problemas para planejar ações preventivas dentro da plataforma.',
+    img: process.env.PUBLIC_URL + '/tech.svg',
   },
 ];
 
@@ -68,12 +71,12 @@ export const Home = () =>{
       <BaseLayout title='Como o IOT pode transformar a sua vida'>
         <Box sx={{marginTop: '5vh'}}>
           <Grid padding="20px" container justifyContent="space-around" alignItems="center" textAlign="center">
-            {cardContent.map(({id, title, text}) => (
+            {cardContent.map(({id, title, text, img}) => (
               <Grid key={id} item md={3}>
                 <Box sx={{marginBottom: '2vh'}}>
-                  <Card sx={{height: {md: '48vh'}}}>
+                  <Card sx={{height: {md: '53vh'}}}>
                     <CardContent>
-                      <img style={{width: '90px'}} src={process.env.PUBLIC_URL + '/logo192.png'}></img>
+                      <img style={{width: '90px', marginBottom: '2vh'}} src={img}></img>
                       <Typography fontWeight='700' variant='h6' gutterBottom>
                         {title}
                       </Typography>
@@ -100,7 +103,7 @@ export const Home = () =>{
         <Box sx={{marginTop: '3vh', paddingX: '5vh'}}>
           <Grid padding="20px" container justifyContent="space-around">
             {data.map((item: any) => (
-              <Grid key={item} item md={3}>
+              <Grid key={item.id} item md={3}>
                 <Box sx={{marginBottom: '2vh'}}>
                   <Card sx={{maxWidth: 345}}>
                     <CardMedia

@@ -17,6 +17,7 @@ export const Artigos = () =>{
   const reference = ref(database, `/Artigos/${params.artigoId}`);
 
   React.useEffect(() => {
+    window.scrollTo(0, 0);
     const getArtigos = async () =>{
       await onValue(reference, (snapshot) =>{
         const artigosData = {
