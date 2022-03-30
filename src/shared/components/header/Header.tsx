@@ -80,7 +80,7 @@ export const Header: React.FC = () =>{
             </Button>
             <Button
               onClick={()=> {
-                console.log('b4');
+                window.open('https://grupo-connect-oficial.web.app/', '_blank');
               }}
               sx={{color: 'white', display: 'block'}}
             >
@@ -134,7 +134,7 @@ export const Header: React.FC = () =>{
                 <Typography textAlign="center">Contato</Typography>
               </MenuItem>
               <MenuItem onClick={()=> {
-                console.log('b1');
+                window.open('https://grupo-connect-oficial.web.app/', '_blank');
               }}>
                 <Typography textAlign="center">Sistema Connect</Typography>
               </MenuItem>

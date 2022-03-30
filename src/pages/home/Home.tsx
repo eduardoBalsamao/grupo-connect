@@ -5,6 +5,10 @@ import app from '../../shared/firebase/firebase';
 import {getDatabase, ref, onValue} from 'firebase/database';
 import * as React from 'react';
 import {useNavigate} from 'react-router-dom';
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {Pagination} from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const cardContent = [
   {
@@ -92,47 +96,71 @@ export const Home = () =>{
           </Grid>
         </Box>
       </BaseLayout>
-      <Box sx={{height: {xs: '10vh', md: '15vh'}, backgroundColor: 'red', backgroundImage: {
-        xs: `linear-gradient(to left, rgba(1, 10, 27, 0.85), rgba(0, 21, 35, 0.3)), url(${process.env.PUBLIC_URL + '/wp5.jpg'})`,
-        md: `linear-gradient(to left, rgba(1, 10, 27, 0.85), rgba(0, 21, 35, 0.3)), url(${process.env.PUBLIC_URL + '/wp4.jpg'})`,
+      <Box sx={{height: {xs: '12vh', md: '16vh'}, backgroundImage: {
+        xs: `url(${process.env.PUBLIC_URL + '/wp2.png'})`,
+        md: `url(${process.env.PUBLIC_URL + '/wp2.png'})`,
       }}}>
 
       </Box>
 
       <BaseLayout title='Leia nossos artigos'>
-        <Box sx={{marginTop: '3vh', paddingX: '5vh'}}>
-          <Grid padding="20px" container justifyContent="space-around">
-            {data.map((item: any) => (
-              <Grid key={item.id} item md={3}>
-                <Box sx={{marginBottom: '2vh'}}>
-                  <Card sx={{maxWidth: 345}}>
-                    <CardMedia
-                      component="img"
-                      height="140"
-                      src={item.image}
-                      alt="green iguana"
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div" color="primary">
-                        {item.title}
-                      </Typography>
-                      <Typography variant="body2" textAlign='initial'>
-                        {item.description}
-                      </Typography>
-                    </CardContent>
-                    <CardActions sx={{justifyContent: 'end', marginRight: '2vh'}}>
-                      <Button onClick={()=>{
-                        navigate(`/artigos/${item.id}`);
-                      }} size="small">Leia Mais</Button>
-                    </CardActions>
-                  </Card>
-                </Box>
+        <Box>
+          <Grid container alignItems="center" justifyContent="space-around">
+            <Swiper
+              effect={'coverflow'}
+              modules={[Pagination]}
+              pagination={{clickable: true}}
+              spaceBetween={25}
+              watchOverflow
+              breakpoints={{
+                // when window width is >= 640px
+                640: {
+                  width: 640,
+                  slidesPerView: 1,
+                },
+                // when window width is >= 768px
+                768: {
+                  width: 768,
+                  slidesPerView: 2,
+                },
+              }}
+            >
+              {data.map((item: any) => (
+                <SwiperSlide key={item.id}>
+                  <Grid item>
+                    <Box marginBottom='10vh' marginTop='2vh' sx={{marginX: {xs: '2vh', md: '5vh'}}}>
+                      <Card sx={{minWidth: 335, display: 'flex', flexDirection: 'column', height: {md: '58vh'}}}>
+                        <CardMedia
+                          component="img"
+                          height="140px"
+                          src={item.image}
+                          alt="green iguana"
+                        />
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div" color="primary">
+                            {item.title}
+                          </Typography>
+                          <Typography variant="body2" textAlign='initial'>
+                            {item.description}
+                          </Typography>
+                        </CardContent>
+                        <Box flexGrow={1}></Box>
+                        <CardActions sx={{justifyContent: 'end', marginRight: '2vh', alignItems: 'end'}}>
+                          <Button onClick={()=>{
+                            navigate(`/artigos/${item.id}`);
+                          }} size="small">Leia Mais</Button>
+                        </CardActions>
+                      </Card>
+                    </Box>
+                  </Grid>
+                </SwiperSlide>
+              ))}
 
-              </Grid>
-            ))}
+
+            </Swiper>
+
           </Grid>
         </Box>
-
       </BaseLayout>
 
     </Box>
