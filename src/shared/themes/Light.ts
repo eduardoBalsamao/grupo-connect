@@ -58,7 +58,7 @@ export const LightTheme = responsiveFontSizes(createTheme({
     },
     h5: {
       fontFamily: 'Montserrat',
-      fontWeight: '500',
+      fontWeight: '700',
     },
     h6: {
       fontFamily: 'Montserrat',

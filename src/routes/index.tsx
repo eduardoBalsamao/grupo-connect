@@ -1,6 +1,6 @@
 
 import {Navigate, Route, Routes} from 'react-router-dom';
-import {Home, Info, Artigos} from '../pages';
+import {Home, Info, Artigos, Produto} from '../pages';
 
 
 export const AppRoutes = () =>{
@@ -16,6 +16,10 @@ export const AppRoutes = () =>{
       />
       <Route path="/artigos/:artigoId" element={
         <Artigos />
+      }
+      />
+      <Route path="/produtos" element={
+        <Produto />
       }
       />
 
