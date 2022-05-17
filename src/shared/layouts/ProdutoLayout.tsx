@@ -1,7 +1,6 @@
 /* eslint-disable require-jsdoc */
 import {Box, Typography, Grid, Card, Chip} from '@mui/material';
 import Divider from '@mui/material/Divider';
-import ReactPlayer from 'react-player';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell, {tableCellClasses} from '@mui/material/TableCell';
@@ -97,12 +96,7 @@ Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.Per au
 
               <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid item sx={{margin: {xs: '1vh', md: '4vh'}}}>
-                  <Box sx={{display: {xs: 'none', md: 'flex'}, marginBottom: '1vh'}}>
-                    <ReactPlayer height = "350px" url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
-                  </Box>
-                  <Box sx={{display: {xs: 'flex', md: 'none'}, marginTop: '1vh', marginBottom: '2vh'}}>
-                    <ReactPlayer width='100%' height= '40vh' url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
-                  </Box>
+
                 </Grid>
               </Grid>
               <Divider variant="middle" />
